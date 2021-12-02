@@ -226,6 +226,12 @@ class ipa(object):
 
         return results
 
+    def sudorule_show(self, sudorule):
+        m = {'item': [sudorule], 'method': 'sudorule_show', 'params':
+            {'all': True}}
+        results = self.makeReq(m)
+        return results
+
     def passwd(self, principal, passwd):
         item = [principal, passwd]
         if not principal.split('@')[0] == self.login_user:
